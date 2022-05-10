@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "184917750333",
+    "project_id": "events24kotlin",
+    "storage_bucket": "events24kotlin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:184917750333:android:4a82f87e9b168bb6eab054",
+        "android_client_info": {
+          "package_name": "com.markolucic.cubes.events24"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "184917750333-iq403fufp43s5hhlofglto70l982i67d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_YSxl1R7IIOkgRKxqUUYMYAC3eytXaOI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "184917750333-iq403fufp43s5hhlofglto70l982i67d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

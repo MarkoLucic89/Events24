@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_main">32dp</dimen>
+    <dimen name="text_size_biggest">36sp</dimen>
+    <dimen name="text_size_normal">16sp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_big">64dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="rv_item_big_width">300dp</dimen>
+    <dimen name="rv_item_big_height">200dp</dimen>
+    <dimen name="corner_radius">16dp</dimen>
+    <dimen name="rv_item_medium_height">200dp</dimen>
+    <dimen name="rv_item_medium_width">150dp</dimen>
+    <dimen name="rv_item_small_width">150dp</dimen>
+    <dimen name="rv_item_small_height">150dp</dimen>
+    <dimen name="text_size_big">20sp</dimen>
+</resources>
