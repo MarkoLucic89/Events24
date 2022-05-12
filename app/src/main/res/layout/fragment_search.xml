@@ -3,49 +3,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple"
+    android:background="@color/purple_dark"
     android:orientation="vertical"
     tools:context=".ui.fragment.SearchFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_main"
+        android:layout_margin="@dimen/margin_medium"
         android:background="@drawable/background_edit_text_search"
-        android:padding="@dimen/margin_small"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_small">
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
-            android:src="@drawable/ic_search"
+            android:layout_height="wrap_content"
             android:padding="@dimen/margin_small"
-            android:layout_height="wrap_content" />
+            android:src="@drawable/ic_search" />
 
         <EditText
             android:id="@+id/editTextSearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:background="@null"
             android:hint="@string/hint_search"
-            android:padding="@dimen/margin_small"
-            android:background="@null" />
+            android:padding="@dimen/margin_small" />
 
     </LinearLayout>
 
     <TextView
+        android:id="@+id/textViewSearchResults"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textViewSearchResults"
-        android:text="Results"
-        android:layout_marginStart="@dimen/margin_main"
-        android:layout_marginEnd="@dimen/margin_main"
-        android:textColor="@color/purple_light"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:textColor="@color/purple_grey"
         android:textSize="@dimen/text_size_big" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/margin_main" />
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_medium" />
 </LinearLayout>

@@ -42,8 +42,8 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        loadData()
         initRecyclerView()
+        loadData()
 
     }
 
@@ -82,7 +82,6 @@ class HomeFragment : Fragment() {
                             }
 
                             homeAdapter.updateLists(eventList, authorList)
-
                         }
 
 
@@ -92,6 +91,7 @@ class HomeFragment : Fragment() {
                 }
             }
     }
+
 
     companion object {
 
