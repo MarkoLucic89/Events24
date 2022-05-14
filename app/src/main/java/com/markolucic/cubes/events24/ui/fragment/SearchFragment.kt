@@ -85,7 +85,7 @@ class SearchFragment : Fragment() {
     }
 
     private fun updateResults(searchList: ArrayList<Event>) {
-        
+
         if (searchList.isEmpty()) {
             searchAdapter.events.clear()
             binding.textViewSearchResults.text = "No results"

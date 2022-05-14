@@ -30,4 +30,10 @@
     <string name="text_last_item_description">Here, I focus on a range of items and features that we use in life without giving them a second thought such as Coca Cola, body muscles and holding ones own breath. Though, most of these notes are not fundamentally necessary.</string>
     <string name="button_saznaj_vise">Saznaj vise</string>
     <string name="hint_search">Search...</string>
+    <string name="button_log_out">Log out</string>
+
+    <string-array name="languages">
+        <item>English</item>
+        <item>Serbian</item>
+    </string-array>
 </resources>

@@ -5,18 +5,27 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.lifecycle.asLiveData
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.messaging.FirebaseMessaging
+import com.markolucic.cubes.events24.data.datastore.DataStorePrefs
 import com.markolucic.cubes.events24.databinding.ActivityLoginBinding
 import com.markolucic.cubes.events24.ui.activity.HomeActivity
 import com.markolucic.cubes.events24.ui.view.CustomToast
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.launch
 
 
 class LoginActivity : AppCompatActivity() {
     private val TAG = "LoginActivity"
 
     private lateinit var binding: ActivityLoginBinding
+
+    //datastore
+    private lateinit var prefs: DataStorePrefs
 
     //firebase
     private lateinit var mAuth: FirebaseAuth
@@ -27,6 +36,12 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        prefs = DataStorePrefs(applicationContext)
+        prefs.getEmail().asLiveData().observe(this) {
+            binding.editTextEmail.setText(it)
+        }
+
 
         initFirebase()
         setListeners()
@@ -66,6 +81,13 @@ class LoginActivity : AppCompatActivity() {
         mAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener {
                 if (it.isSuccessful) {
+
+                    CoroutineScope(IO).launch {
+                        prefs.saveEmail(email)
+                        prefs.setNotificationStatus(true)
+                        FirebaseMessaging.getInstance().subscribeToTopic("general")
+                    }
+
                     startActivity(Intent(this, HomeActivity::class.java))
                     finish()
                 } else {
