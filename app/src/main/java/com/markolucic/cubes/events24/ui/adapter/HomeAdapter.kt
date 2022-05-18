@@ -206,7 +206,7 @@ class HomeAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
                 1 -> {
                     binding.imageViewPlay.setColorFilter(context.resources.getColor(R.color.purple))
-                    binding.textViewType.text = context.getString(R.string.text_koncerti)
+                    binding.textViewType.text = context.getString(R.string.text_concerts)
                     binding.recyclerView.apply {
                         layoutManager =
                             LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
@@ -216,7 +216,7 @@ class HomeAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
                 2 -> {
                     binding.imageViewPlay.setColorFilter(context.resources.getColor(R.color.purple))
-                    binding.textViewType.text = context.getString(R.string.text_pozoriste)
+                    binding.textViewType.text = context.getString(R.string.text_theatre)
                     binding.recyclerView.apply {
                         layoutManager =
                             LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
@@ -236,7 +236,7 @@ class HomeAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
                 4 -> {
                     binding.imageViewPlay.setColorFilter(context.resources.getColor(R.color.purple))
-                    binding.textViewType.text = context.getString(R.string.text_najnoviji_dogadjaji)
+                    binding.textViewType.text = context.getString(R.string.text_recent_events)
                     binding.recyclerView.apply {
                         layoutManager =
                             LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
@@ -251,7 +251,7 @@ class HomeAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
         fun bindAuthor(eventList: ArrayList<Event>, authorList: ArrayList<Author>) {
             binding.imageViewPlay.setColorFilter(context.resources.getColor(R.color.yellow))
-            binding.textViewType.text = context.getString(R.string.text_izvodjaci)
+            binding.textViewType.text = context.getString(R.string.text_artists)
             binding.recyclerView.apply {
                 layoutManager =
                     LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
