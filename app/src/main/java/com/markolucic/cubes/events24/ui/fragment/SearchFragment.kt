@@ -44,15 +44,16 @@ class SearchFragment : Fragment() {
     }
 
     private fun setSearchTextListener() {
+
         binding.editTextSearch.addTextChangedListener(afterTextChanged = {
             searchEvents(it.toString())
-            Toast.makeText(context, it.toString(), Toast.LENGTH_SHORT).show()
         })
+
     }
 
     private fun searchEvents(searchTerm: String) {
 
-        var searchList: ArrayList<Event> = arrayListOf()
+        val searchList: ArrayList<Event> = arrayListOf()
 
         if (searchTerm.isEmpty()) {
             updateResults(searchList)
@@ -74,8 +75,6 @@ class SearchFragment : Fragment() {
                         }
                     }
 
-                    searchAdapter.events = searchList
-
                     updateResults(searchList)
 
                 } else {
@@ -87,7 +86,6 @@ class SearchFragment : Fragment() {
     private fun updateResults(searchList: ArrayList<Event>) {
 
         if (searchList.isEmpty()) {
-            searchAdapter.events.clear()
             binding.textViewSearchResults.text = "No results"
         } else {
             binding.textViewSearchResults.text = "${searchList.size} results"

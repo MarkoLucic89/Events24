@@ -166,7 +166,7 @@ class CustomEditText : LinearLayout {
         setViewColor(resources.getColor(R.color.purple_light))
         editText!!.inputType = inputTypeName
         imageView1!!.setImageResource(R.drawable.ic_person)
-        editText!!.hint = "Name"
+        editText!!.hint = context.getString(R.string.name)
         imageView2!!.visibility = GONE
     }
 
@@ -177,7 +177,7 @@ class CustomEditText : LinearLayout {
         setViewColor(resources.getColor(R.color.purple_light))
         imageView1!!.setImageResource(R.drawable.ic_lock)
         editText!!.inputType = inputTypePasswordVisible
-        editText!!.hint = "Password"
+        editText!!.hint = context.getString(R.string.password)
         imageView2!!.setImageResource(R.drawable.ic_visibility_on)
         imageView2!!.setOnClickListener { view: View? ->
             if (editText!!.inputType == inputTypePasswordInvisible) {
@@ -197,7 +197,7 @@ class CustomEditText : LinearLayout {
         setViewColor(resources.getColor(R.color.purple_light))
         imageView1!!.setImageResource(R.drawable.ic_lock)
         editText!!.inputType = inputTypePasswordInvisible
-        editText!!.hint = "Password"
+        editText!!.hint = context.getString(R.string.password)
         imageView2!!.setImageResource(R.drawable.ic_visibility_off)
         imageView2!!.setOnClickListener { view: View? ->
             if (editText!!.inputType == inputTypePasswordInvisible) {
@@ -214,7 +214,7 @@ class CustomEditText : LinearLayout {
         setViewColor(resources.getColor(R.color.white))
         imageView1!!.setImageResource(R.drawable.ic_mail)
         editText!!.inputType = inputTypeEmail
-        editText!!.hint = "E-mail"
+        editText!!.hint = context.getString(R.string.email)
         imageView2!!.setImageResource(R.drawable.ic_check)
 
         //TextChangedListener

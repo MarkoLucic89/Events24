@@ -46,13 +46,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:src="@drawable/ic_person"
-                android:hint="Name" />
+                android:hint="@string/name" />
 
             <com.markolucic.cubes.events24.ui.view.CustomEditText
                 android:id="@+id/editTextSurname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Surname"
+                android:hint="@string/surname"
                 android:src="@drawable/ic_person"
                 android:layout_marginTop="16dp" />
 
@@ -62,13 +62,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:src="@drawable/ic_location"
-                android:hint="City" />
+                android:hint="@string/city" />
 
             <com.markolucic.cubes.events24.ui.view.CustomEditText
                 android:id="@+id/editTextAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Address"
+                android:hint="@string/address"
                 android:src="@drawable/ic_home"
                 android:layout_marginTop="16dp" />
 
@@ -76,7 +76,7 @@
                 android:id="@+id/editTextPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Phone"
+                android:hint="@string/phone"
                 android:src="@drawable/ic_phone"
                 android:layout_marginTop="16dp" />
 

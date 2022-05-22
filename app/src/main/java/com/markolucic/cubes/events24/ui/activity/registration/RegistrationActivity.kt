@@ -11,10 +11,11 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.markolucic.cubes.events24.data.model.User
 import com.markolucic.cubes.events24.databinding.ActivityRegistrationBinding
+import com.markolucic.cubes.events24.ui.activity.BasicActivity
 import com.markolucic.cubes.events24.ui.activity.HomeActivity
 import com.markolucic.cubes.events24.ui.view.CustomToast
 
-class RegistrationActivity : AppCompatActivity() {
+class RegistrationActivity : BasicActivity() {
     private val TAG = "RegistrationActivity"
 
     private lateinit var binding: ActivityRegistrationBinding

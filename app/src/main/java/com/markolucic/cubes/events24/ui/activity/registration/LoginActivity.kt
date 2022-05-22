@@ -12,6 +12,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.messaging.FirebaseMessaging
 import com.markolucic.cubes.events24.data.datastore.DataStorePrefs
 import com.markolucic.cubes.events24.databinding.ActivityLoginBinding
+import com.markolucic.cubes.events24.ui.activity.BasicActivity
 import com.markolucic.cubes.events24.ui.activity.HomeActivity
 import com.markolucic.cubes.events24.ui.view.CustomToast
 import kotlinx.coroutines.CoroutineScope
@@ -19,7 +20,7 @@ import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
 
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : BasicActivity() {
     private val TAG = "LoginActivity"
 
     private lateinit var binding: ActivityLoginBinding

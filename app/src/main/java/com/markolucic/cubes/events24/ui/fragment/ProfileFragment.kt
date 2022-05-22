@@ -15,9 +15,12 @@ import com.markolucic.cubes.events24.data.DataContainer
 import com.markolucic.cubes.events24.data.datastore.DataStorePrefs
 import com.markolucic.cubes.events24.data.model.User
 import com.markolucic.cubes.events24.databinding.FragmentProfileBinding
+import com.markolucic.cubes.events24.tools.LanguageTools
 import com.markolucic.cubes.events24.ui.activity.EditProfileActivity
+import com.markolucic.cubes.events24.ui.activity.HomeActivity
 import com.markolucic.cubes.events24.ui.activity.SplashScreenActivity
 import com.markolucic.cubes.events24.ui.view.CustomToast
+import com.squareup.picasso.Picasso
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
@@ -57,14 +60,19 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         observeNotifications()
-//        observeLanguage()
+        observeLanguage()
         setListeners()
     }
 
     override fun onResume() {
         super.onResume()
         setCurrentUser()
-        observeLanguage()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        DataStorePrefs(requireContext()).getLanguage().asLiveData().removeObservers(this)
+
     }
 
     private fun setCurrentUser() {
@@ -99,8 +107,14 @@ class ProfileFragment : Fragment() {
     }
 
     private fun updateUserUi(user: User) {
+
+        if (user.imageUrl.isNotEmpty()) {
+            Picasso.get().load(user.imageUrl).into(binding.imageViewProfileImage)
+        }
+
         binding.textViewEmail.text = user.email
         binding.textViewName.text = user.name
+
     }
 
     private fun observeNotifications() {
@@ -118,13 +132,10 @@ class ProfileFragment : Fragment() {
 
     private fun observeLanguage() {
         prefs.getLanguage().asLiveData().observe(requireActivity()) {
-            languageIndex = it
-            binding.buttonLanguage.text = languages[it]
 
-            when (languageIndex) {
-                0 -> setAppLocale("en")
-                else -> setAppLocale("sr")
-            }
+            languageIndex = it
+
+            binding.buttonLanguage.text = languages[languageIndex]
 
         }
     }
@@ -157,19 +168,28 @@ class ProfileFragment : Fragment() {
     }
 
     private fun handleLanguage() {
+
         if (languageIndex == languages.lastIndex) {
-            CoroutineScope(IO).launch { prefs.saveLanguage(0) }
+
+            CoroutineScope(IO).launch {
+                prefs.saveLanguage(0)
+                restartHomeActivity()
+            }
         } else {
             languageIndex++
-            CoroutineScope(IO).launch { prefs.saveLanguage(languageIndex) }
+
+            CoroutineScope(IO).launch {
+                prefs.saveLanguage(languageIndex)
+                restartHomeActivity()
+            }
         }
 
-        if (languageIndex == 1) {
-            setAppLocale("sr")
-        } else {
-            setAppLocale("en")
-        }
+    }
 
+    private fun restartHomeActivity() {
+        val intent = Intent(this.requireContext(), HomeActivity::class.java)
+        intent.putExtra("isRestarted", true)
+        startActivity(intent)
     }
 
     private fun logout() {
@@ -177,22 +197,6 @@ class ProfileFragment : Fragment() {
         activity?.finish()
         startActivity(Intent(activity, SplashScreenActivity::class.java))
     }
-
-
-    private fun setAppLocale(localeCode: String) {
-
-        val resources = requireActivity().resources
-
-        val configuration = resources.configuration
-
-        val displayMetrics = resources.displayMetrics
-
-        configuration.setLocale(Locale(localeCode.lowercase()))
-
-        resources.updateConfiguration(configuration, displayMetrics)
-
-    }
-
 
     companion object {
         @JvmStatic

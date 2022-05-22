@@ -9,4 +9,5 @@ class User(
     var city: String = "",
     var address: String = "",
     var phone: String = "",
+    var imageUrl: String = ""
 )

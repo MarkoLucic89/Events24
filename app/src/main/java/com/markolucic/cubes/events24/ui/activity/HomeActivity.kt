@@ -8,7 +8,7 @@ import com.markolucic.cubes.events24.databinding.ActivityHomeBinding
 import com.markolucic.cubes.events24.ui.fragment.*
 
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : BasicActivity() {
 
     private lateinit var binding: ActivityHomeBinding
 
@@ -18,9 +18,31 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setFragment(HomeFragment.newInstance())
         setupBottomNavigation()
+        checkIfActivityRestarted()
     }
+
+    private fun checkIfActivityRestarted() {
+        val isRestarted = intent.getBooleanExtra("isRestarted", false)
+
+        when {
+            isRestarted ->{
+                setFragment(ProfileFragment.newInstance())
+                binding.bottomNavigation.selectedItemId = R.id.profile
+            }
+            else -> {
+                setFragment(HomeFragment.newInstance())
+            }
+        }
+    }
+
+    private fun setFragment(selectedFragment: Fragment) {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragmentContainer, selectedFragment)
+            .commit()
+    }
+
 
     private fun setupBottomNavigation() {
         binding.bottomNavigation.setOnItemSelectedListener {
@@ -40,10 +62,5 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
-    private fun setFragment(selectedFragment: Fragment) {
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.fragmentContainer, selectedFragment)
-            .commit()
-    }
+
 }

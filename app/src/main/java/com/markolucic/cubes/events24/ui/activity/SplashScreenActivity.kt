@@ -17,7 +17,7 @@ import com.markolucic.cubes.events24.ui.activity.registration.MainRegistrationAc
 import com.markolucic.cubes.events24.ui.view.CustomToast
 import java.util.*
 
-class SplashScreenActivity : AppCompatActivity() {
+class SplashScreenActivity : BasicActivity() {
 
     private val TAG: String = "SplashScreenActivity"
     private lateinit var binding: ActivitySplashScreenBinding
@@ -32,9 +32,6 @@ class SplashScreenActivity : AppCompatActivity() {
         initFirebase()
         initToken()
 
-        observeLanguage()
-
-
         binding.imageViewLogo.postDelayed({
             if (mAuth.currentUser == null) {
                 startActivity(Intent(applicationContext, MainRegistrationActivity::class.java))
@@ -43,27 +40,6 @@ class SplashScreenActivity : AppCompatActivity() {
             }
             finish()
         }, 500)
-    }
-
-    private fun observeLanguage() {
-
-        DataStorePrefs(applicationContext).getLanguage().asLiveData().observe(this) {
-
-            when (it) {
-                0 -> setAppLocale("en")
-                else -> setAppLocale("sr")
-            }
-        }
-    }
-
-    private fun setAppLocale(s: String) {
-
-        val displayMetrics = resources.displayMetrics
-        val configuration = resources.configuration
-
-        configuration.setLocale(Locale(s.lowercase()))
-
-        resources.updateConfiguration(configuration, displayMetrics)
     }
 
     private fun initToken() {

@@ -5,8 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.markolucic.cubes.events24.databinding.ActivityMainRegistrationBinding
+import com.markolucic.cubes.events24.ui.activity.BasicActivity
 
-class MainRegistrationActivity : AppCompatActivity() {
+class MainRegistrationActivity : BasicActivity() {
 
     private lateinit var binding: ActivityMainRegistrationBinding
 

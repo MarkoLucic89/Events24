@@ -9,7 +9,6 @@ import com.markolucic.cubes.events24.R
 import com.markolucic.cubes.events24.data.model.Author
 import com.markolucic.cubes.events24.data.model.Event
 import com.markolucic.cubes.events24.databinding.RvItemHomePageBinding
-import com.markolucic.cubes.events24.databinding.RvItemLastHomepageBinding
 import kotlin.collections.ArrayList
 
 class HomeAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -62,75 +61,14 @@ class HomeAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return when (viewType) {
-            0 -> {
-                HomeViewHolder(
-                    RvItemHomePageBinding.inflate(
-                        LayoutInflater.from(parent.context),
-                        parent,
-                        false
-                    )
-                )
-            }
-            1 -> {
-                HomeViewHolder(
-                    RvItemHomePageBinding.inflate(
-                        LayoutInflater.from(parent.context),
-                        parent,
-                        false
-                    )
-                )
-            }
-            2 -> {
-                HomeViewHolder(
-                    RvItemHomePageBinding.inflate(
-                        LayoutInflater.from(parent.context),
-                        parent,
-                        false
-                    )
-                )
-            }
-            3 -> {
-                HomeViewHolder(
-                    RvItemHomePageBinding.inflate(
-                        LayoutInflater.from(parent.context),
-                        parent,
-                        false
-                    )
-                )
-            }
-            4 -> {
-                HomeViewHolder(
-                    RvItemHomePageBinding.inflate(
-                        LayoutInflater.from(parent.context),
-                        parent,
-                        false
-                    )
-                )
-            }
-            5 -> {
-                HomeViewHolder(
-                    RvItemHomePageBinding.inflate(
-                        LayoutInflater.from(parent.context),
-                        parent,
-                        false
-                    )
-                )
-            }
-            6 -> {
-                LastItemViewHolder(
-                    RvItemLastHomepageBinding.inflate(
-                        LayoutInflater.from(parent.context),
-                        parent,
-                        false
-                    )
-                )
-            }
 
-            else -> {
-                throw IllegalArgumentException("Invalid ViewType Provided")
-            }
-        }
+        return HomeViewHolder(
+            RvItemHomePageBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
@@ -162,25 +100,14 @@ class HomeAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         }
     }
 
-    override fun getItemCount(): Int = 7
+    override fun getItemCount(): Int = 6
 
-    override fun getItemViewType(position: Int): Int {
-        if (position == 6) {
-            return 6
-        }
-        return 0
-    }
 
     fun updateLists(eventList: ArrayList<Event>, authorList: ArrayList<Author>) {
         this.eventList = eventList
         this.authorList = authorList
 
         regroupEventsByItemType()
-    }
-
-    class LastItemViewHolder(private val binding: RvItemLastHomepageBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-
     }
 
 

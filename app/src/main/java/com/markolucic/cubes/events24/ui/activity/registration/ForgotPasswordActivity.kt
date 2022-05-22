@@ -5,9 +5,10 @@ import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
 import com.markolucic.cubes.events24.R
 import com.markolucic.cubes.events24.databinding.ActivityForgotPasswordBinding
+import com.markolucic.cubes.events24.ui.activity.BasicActivity
 import com.markolucic.cubes.events24.ui.view.CustomToast
 
-class ForgotPasswordActivity : AppCompatActivity() {
+class ForgotPasswordActivity : BasicActivity() {
 
     private lateinit var binding: ActivityForgotPasswordBinding
     private lateinit var auth: FirebaseAuth
