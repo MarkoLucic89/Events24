@@ -14,6 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Events24">
         <activity
+            android:name=".ui.activity.EventsDetailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Events24Dark"/>
+        <activity
             android:name=".ui.activity.BasicActivity"
             android:exported="false" />
         <activity

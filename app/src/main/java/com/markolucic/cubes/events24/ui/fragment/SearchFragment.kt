@@ -66,9 +66,10 @@ class SearchFragment : Fragment() {
                 if (it.isSuccessful) {
 
                     for (document: QueryDocumentSnapshot in it.result) {
-                        val event = Event(document.data)
+                        val event = Event(document.id, document.data)
                         if (event.title.lowercase(Locale.getDefault())
-                                .contains(searchTerm.lowercase(Locale.getDefault()))) {
+                                .contains(searchTerm.lowercase(Locale.getDefault()))
+                        ) {
 
                             searchList.add(event)
 

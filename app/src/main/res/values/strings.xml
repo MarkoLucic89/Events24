@@ -52,6 +52,11 @@
     <string name="cancel">cancel</string>
     <string name="toast_user_successfully_uploaded">Profile info successfully uploaded.</string>
 
+    <string name="ticket">Ticket</string>
+    <string name="pictures_and_video">Pictures and video</string>
+    <string name="about_artist">About artist</string>
+    <string name="news">News</string>
+
     <string-array name="languages">
         <item>English</item>
         <item>Serbian</item>

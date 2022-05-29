@@ -1,5 +1,6 @@
 package com.markolucic.cubes.events24.ui.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import com.markolucic.cubes.events24.data.model.Event
 import com.markolucic.cubes.events24.databinding.RvItemEventsBigBinding
 import com.markolucic.cubes.events24.databinding.RvItemEventsMediumBinding
 import com.markolucic.cubes.events24.databinding.RvItemEventsSmallBinding
+import com.markolucic.cubes.events24.ui.activity.EventsDetailActivity
 import com.squareup.picasso.Picasso
 class EventsAdapter(
     private var eventList: List<Event>,
@@ -74,6 +76,12 @@ class EventsAdapter(
                 eventsViewHolder.bindAuthor(author)
             }
 
+        }
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(it.context, EventsDetailActivity::class.java)
+            intent.putExtra("id", eventList[position].id)
+            it.context.startActivity(intent)
         }
 
     }

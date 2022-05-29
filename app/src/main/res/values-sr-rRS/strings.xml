@@ -52,6 +52,11 @@
     <string name="cancel">otkazi</string>
     <string name="toast_user_successfully_uploaded">Promene profila su uspesno sacuvane.</string>
 
+    <string name="ticket">Karta</string>
+    <string name="pictures_and_video">Slike i video</string>
+    <string name="about_artist">O izvodjacu</string>
+    <string name="news">Vesti</string>
+
     <string-array name="languages">
         <item>Engleski</item>
         <item>Srpski</item>

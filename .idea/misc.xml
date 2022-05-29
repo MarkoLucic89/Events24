@@ -7,9 +7,12 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/Events24/app/src/main/res/drawable/background_button.xml" value="0.2535" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Events24/app/src/main/res/drawable/background_gradient.xml" value="0.2165" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Events24/app/src/main/res/drawable/background_transparent_dark_view.xml" value="0.1315" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Events24/app/src/main/res/drawable/ic_back.xml" value="0.2385" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Events24/app/src/main/res/drawable/ic_calendar.xml" value="0.2385" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Events24/app/src/main/res/drawable/ic_lock.xml" value="0.2465" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Events24/app/src/main/res/drawable/ic_person.xml" value="0.2165" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Events24/app/src/main/res/layout/activity_edit_profile.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Events24/app/src/main/res/layout/activity_events_detail.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Events24/app/src/main/res/layout/activity_forgot_password.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Events24/app/src/main/res/layout/activity_home.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Events24/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
@@ -22,6 +25,11 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/Events24/app/src/main/res/layout/fragment_profile.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Events24/app/src/main/res/layout/fragment_search.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Events24/app/src/main/res/layout/fragment_tickets.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Events24/app/src/main/res/layout/rv_item_details_events_header.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Events24/app/src/main/res/layout/rv_item_details_events_news.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Events24/app/src/main/res/layout/rv_item_details_events_pictures.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Events24/app/src/main/res/layout/rv_item_details_events_title.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Events24/app/src/main/res/layout/rv_item_details_tickets.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Events24/app/src/main/res/layout/rv_item_events_big.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Events24/app/src/main/res/layout/rv_item_events_medium.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Events24/app/src/main/res/layout/rv_item_events_search.xml" value="0.36666666666666664" />

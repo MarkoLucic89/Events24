@@ -67,7 +67,7 @@ class HomeFragment : Fragment() {
                     eventList.clear()
 
                     for (document: QueryDocumentSnapshot in it.result) {
-                        eventList.add(Event(document.data))
+                        eventList.add(Event(document.id, document.data))
                     }
 
 //                    homeAdapter.eventList = eventList

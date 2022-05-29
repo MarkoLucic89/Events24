@@ -7,6 +7,8 @@
     <color name="purple">#561BC8</color>
     <color name="purple_dark">#210239</color>
     <color name="purple_dark_transparent">#80160523</color>
+    <color name="purple_dark_transparent_80">#80210239</color>
+    <color name="purple_dark_2_transparent_80">#80160523</color>
     <color name="purple_dark_2">#160523</color>
     <color name="purple_light">#9D82D0</color>
     <color name="purple_grey">#B0A5C4</color>
