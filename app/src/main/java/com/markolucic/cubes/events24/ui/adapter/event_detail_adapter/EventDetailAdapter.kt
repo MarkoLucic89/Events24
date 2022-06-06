@@ -1,4 +1,4 @@
-package com.markolucic.cubes.events24.ui.adapter
+package com.markolucic.cubes.events24.ui.adapter.event_detail_adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import com.markolucic.cubes.events24.R
 import com.markolucic.cubes.events24.data.model.Event
 import com.markolucic.cubes.events24.data.model.News
 import com.markolucic.cubes.events24.databinding.*
-import com.markolucic.cubes.events24.ui.adapter.detail_item_model.*
+import com.markolucic.cubes.events24.ui.adapter.event_detail_adapter.item_model.*
 
 class EventDetailAdapter(context: Context, event: Event) :
     RecyclerView.Adapter<EventDetailAdapter.EventViewHolder>() {
@@ -20,7 +20,7 @@ class EventDetailAdapter(context: Context, event: Event) :
 
         //HEADER
 
-        items.add(ItemDetailHeader(event))
+        items.add(ItemDetailHeader(context, event))
 
         if (event.tickets.isNotEmpty()) {
 
@@ -36,7 +36,19 @@ class EventDetailAdapter(context: Context, event: Event) :
 
         }
 
-        if (event.aboutArtist.description != "" && event.aboutArtist.imageUrl != "" ) {
+        if (event.pictures.isNotEmpty()) {
+
+            //TITLE PICTURES
+
+            items.add(ItemDetailTitle(context.getString(R.string.pictures_and_video)))
+
+            //PICTURES
+
+            items.add(ItemDetailPictures(event.pictures))
+
+        }
+
+        if (event.aboutArtist.description != "" && event.aboutArtist.imageUrl != "") {
 
             //TITLE ABOUT AUTHOR
 

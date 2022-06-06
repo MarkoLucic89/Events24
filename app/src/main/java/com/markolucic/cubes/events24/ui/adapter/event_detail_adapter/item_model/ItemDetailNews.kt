@@ -1,11 +1,11 @@
-package com.markolucic.cubes.events24.ui.adapter.detail_item_model
+package com.markolucic.cubes.events24.ui.adapter.event_detail_adapter.item_model
 
 import com.markolucic.cubes.events24.data.model.News
 import com.markolucic.cubes.events24.databinding.RvItemDetailsEventsNewsBinding
-import com.markolucic.cubes.events24.ui.adapter.EventDetailAdapter
+import com.markolucic.cubes.events24.ui.adapter.event_detail_adapter.EventDetailAdapter
 import com.squareup.picasso.Picasso
 
-class ItemDetailNews(private val news: News):ItemDetail {
+class ItemDetailNews(private val news: News): ItemDetail {
 
     override fun getType(): Int = 5
 

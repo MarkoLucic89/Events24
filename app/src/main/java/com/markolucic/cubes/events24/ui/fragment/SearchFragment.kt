@@ -5,14 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QueryDocumentSnapshot
+import com.markolucic.cubes.events24.R
 import com.markolucic.cubes.events24.data.model.Event
 import com.markolucic.cubes.events24.databinding.FragmentSearchBinding
-import com.markolucic.cubes.events24.ui.adapter.SearchAdapter
+import com.markolucic.cubes.events24.ui.adapter.events_adapter.EventsAdapter
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -20,7 +20,7 @@ class SearchFragment : Fragment() {
 
     private lateinit var firestore: FirebaseFirestore
     private lateinit var binding: FragmentSearchBinding
-    private lateinit var searchAdapter: SearchAdapter
+    private lateinit var eventsAdapter: EventsAdapter
     private lateinit var eventList: ArrayList<Event>
 
     override fun onCreateView(
@@ -91,14 +91,16 @@ class SearchFragment : Fragment() {
         } else {
             binding.textViewSearchResults.text = "${searchList.size} results"
         }
-        searchAdapter.events = searchList
+
+        eventsAdapter.updateList(searchList)
     }
 
     private fun initSearchRecyclerView() {
-        searchAdapter = SearchAdapter()
+
+        eventsAdapter = EventsAdapter(context, eventList, R.layout.rv_item_events_grid)
 
         binding.recyclerView.apply {
-            adapter = searchAdapter
+            adapter = eventsAdapter
             layoutManager = GridLayoutManager(context, 2)
         }
     }

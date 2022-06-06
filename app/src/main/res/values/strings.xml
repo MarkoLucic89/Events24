@@ -56,6 +56,7 @@
     <string name="pictures_and_video">Pictures and video</string>
     <string name="about_artist">About artist</string>
     <string name="news">News</string>
+    <string name="all">All</string>
 
     <string-array name="languages">
         <item>English</item>

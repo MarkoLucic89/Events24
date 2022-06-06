@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
 import com.markolucic.cubes.events24.data.model.Event
 import com.markolucic.cubes.events24.databinding.ActivityEventsDetailBinding
-import com.markolucic.cubes.events24.ui.adapter.EventDetailAdapter
+import com.markolucic.cubes.events24.ui.adapter.event_detail_adapter.EventDetailAdapter
 
 class EventsDetailActivity : BasicActivity() {
 

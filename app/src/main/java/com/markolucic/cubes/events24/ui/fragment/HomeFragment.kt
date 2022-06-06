@@ -6,13 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QueryDocumentSnapshot
 import com.markolucic.cubes.events24.data.model.Author
 import com.markolucic.cubes.events24.data.model.Event
 import com.markolucic.cubes.events24.databinding.FragmentHomeBinding
-import com.markolucic.cubes.events24.ui.adapter.HomeAdapter
+import com.markolucic.cubes.events24.ui.adapter.home_page_adapter.HomePageAdapter
 
 class HomeFragment : Fragment() {
 
@@ -20,7 +19,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var eventList: ArrayList<Event>
     private lateinit var authorList: ArrayList<Author>
-    private lateinit var homeAdapter: HomeAdapter
+    private lateinit var homePageAdapter: HomePageAdapter
 
     private lateinit var db: FirebaseFirestore
 
@@ -48,16 +47,15 @@ class HomeFragment : Fragment() {
     }
 
     private fun initRecyclerView() {
+
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(context)
-            homeAdapter = HomeAdapter()
-//            homeAdapter.eventList = eventList
-            adapter = homeAdapter
+            homePageAdapter = HomePageAdapter(context)
+            adapter = homePageAdapter
         }
     }
 
     private fun loadData() {
-
 
         db.collection("events")
             .get()
@@ -70,8 +68,6 @@ class HomeFragment : Fragment() {
                         eventList.add(Event(document.id, document.data))
                     }
 
-//                    homeAdapter.eventList = eventList
-
                     db.collection("authors")
                         .get()
                         .addOnCompleteListener {
@@ -81,9 +77,9 @@ class HomeFragment : Fragment() {
                                 authorList.add(Author(document.data))
                             }
 
-                            homeAdapter.updateLists(eventList, authorList)
-                        }
+                            homePageAdapter.updateItemList(eventList, authorList)
 
+                        }
 
 
                 } else {

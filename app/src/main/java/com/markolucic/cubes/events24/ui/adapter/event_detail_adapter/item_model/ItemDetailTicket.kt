@@ -1,8 +1,8 @@
-package com.markolucic.cubes.events24.ui.adapter.detail_item_model
+package com.markolucic.cubes.events24.ui.adapter.event_detail_adapter.item_model
 
 import com.markolucic.cubes.events24.data.model.Ticket
 import com.markolucic.cubes.events24.databinding.RvItemDetailsTicketsBinding
-import com.markolucic.cubes.events24.ui.adapter.EventDetailAdapter
+import com.markolucic.cubes.events24.ui.adapter.event_detail_adapter.EventDetailAdapter
 
 class ItemDetailTicket(val ticket: Ticket) : ItemDetail {
 

@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
     id 'com.google.firebase.crashlytics'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -60,19 +61,27 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:23.0.4'
     implementation 'com.google.firebase:firebase-storage:20.0.1'
 
-    //Picasso
+    // Picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
 
-    //Coroutines
+    // Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0'
 
 
-    //Lifecycle
+    // Lifecycle
 
     // ViewModel
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0-rc01")
     // LiveData
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.5.0-rc01")
+
+    // Room
+    implementation "androidx.room:room-runtime:2.4.2"
+    kapt "androidx.room:room-compiler:2.4.2"
+
+
+    // Maps
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
 
 
 
